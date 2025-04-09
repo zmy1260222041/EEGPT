@@ -81,7 +81,7 @@ class LitEEGPTCausal(pl.LightningModule):
         
         x = self.chan_conv(x)
         
-        self.target_encoder.eval()
+        self.target_encoder.eval() # 设置为评估模式
         
         z = self.target_encoder(x, self.chans_id.to(x))
         
